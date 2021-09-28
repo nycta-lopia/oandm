@@ -1,0 +1,50 @@
+// Section 2 - Pre-O&M
+// Event - Friends
+
+::POM Friends
+<<set $withFriends to true>>
+It's after work, in February. The sun is setting fairly early at the moment. Some friends invited you out this evening.
+
+[[Stay in|POM Friends Stay]], you don't want to have to deal with being out after dark around people that don't know.
+[[Go out|POM Friends Go]], you don't want to stay home and miss everything.
+
+::POM Friends Stay
+<<set $skippedEvents += 1>>
+You text your friend back saying you can't make it, but maybe next time. They're dissapointed as are you, but that's how it goes sometimes.
+
+<<include 'POM Time Passing'>>
+
+::POM Friends Go
+You do random tasks around the house before heading out. The sun's still up enough that you're fine getting out to the restaurant, and you have fun hanging out with friends for the evening.
+
+Everyone leaves the restaurant together, heading in different directions. A few of you are headed towards the subway together.
+
+[[Walk to the subway|POM Friends Subway]]
+
+::POM Friends Subway
+You all head to the subway together, chatting as you walk the few blocks there.
+
+[[Slow down and be extra careful|POM Friends Subway Slow]]
+<<set _passage to either('POM Friends Subway OK', 'POM Friends Subway OK', 'POM Friends Subway Not OK')>><<link 'Keep up with everyone else' _passage>><</link>>
+
+::POM Friends Subway Slow
+You slow down, trying to gauge what everything is, whether every little change in brightness is a shadow, a step, some wet pavement, or something else. A minute later you realize one of your friends is trying to talk to you up ahead, not realizing you fell so far behind.
+
+[[Tell them you'll see them later|POM Friends Subway Solo]]
+<<set _passage to either('POM Friends Subway OK', 'POM Friends Subway OK', 'POM Friends Subway Not OK')>><<link 'Catch up to them' _passage>><</link>>
+
+::POM Friends Subway Solo
+@@.me;I'll see you all later, I need to take care of something else on my way home, I totally forgot."@@
+
+@@.them;O..kay? That's weird, but sure, I'll see you another time!@@
+
+<<include 'POM Friends Subway OK'>>
+
+::POM Friends Subway OK
+You get to the subway without too much trouble, and head back home.
+
+You get to your apartment, and [[go inside|POM Home Positive]]
+
+::POM Friends Subway Not OK
+You head to the subway with your friends <<include 'POM Injury'>>
+You're finally home, [[go inside|POM Home Negative]]

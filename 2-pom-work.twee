@@ -1,0 +1,40 @@
+// Section 2 - Pre-O&M
+// Event - Working Late
+
+::POM Work
+You're just leaving work, having had to work late to get some things done before a deadline. It's still light enough out as you head to the subway and descend underground, heading home.
+
+You arrive at your stop about an hour later, getting off the train and making your way up the escalators and stairs to the street.
+
+[[Emerge from the subway|POM Work Subway]]
+
+::POM Work Subway
+It's gotten dark out while you were heading home, unfortunately. You start heading home, but <<if $homeConstruction>>the sidewalk and road is still torn up from the construction work<<else>>they've torn up the sidewalk and part of the road while you were at work, replacing a broken water main or something<</if>>.
+
+[[Walk slowly and carefully|POM Work Slow]], making sure you don't trip on anything.
+Be careful, but walk at [[your preferred speed|POM Work Normal]].
+<<set $homeConstruction to true>>
+
+::POM Work Slow
+You walk slowly, probing anything you think might be a step or bump or drop-off with your foot. You feel eyes on you as you do, probably wondering why you're so slow. You somewhat regret not just walking home normally, but also don't want to get hurt so...
+
+<<set _passage to either('POM Work Home OK', 'POM Work Bump')>>Keep <<link 'heading home' _passage>><</link>>...
+
+::POM Work Normal
+You walk home at your preferred pace, trying your best to figure out what you're walking on and what's just ahead of you.
+
+<<set _passage to either('POM Work Home OK', 'POM Work Injury')>>Keep <<link 'heading home' _passage>><</link>>...
+
+::POM Work Bump
+You're looking down to carefully avoid tripping on something as you walk home, <<include 'POM Injury Bump'>>
+You shake yourself off and keep heading [[home|POM Work Home Not OK]].
+
+::POM Work Injury
+You keep walking towards your apartment <<include 'POM Injury'>>
+You shake yourself off and keep heading [[home|POM Work Home Not OK]].
+
+::POM Work Home OK
+You arrive back at your apartment without any problems this time, and [[go inside|POM Home Positive]].
+
+::POM Work Home Not OK
+You're finally back at your apartment, [[go inside|POM Home Negative]]

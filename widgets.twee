@@ -1,0 +1,4 @@
+::InitWidgets [widget]
+/* excuses for bumping into things. pulled from personal experience, lol. */
+/* TBD MEOW expand this */
+<<widget excuse>><<set _excuse to either("wasn't paying enough attention", "must have been distracted", "was looking at that dog and didn't see it")>><<print _excuse>><</widget>>

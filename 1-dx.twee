@@ -1,0 +1,144 @@
+/* Section 1 - Diagnosis */
+
+::Dx Intro
+You're at an eye doctor's office. You've tripped over some things at night recently, probably just time to get glasses like everyone else in your family has, no big deal. Mostly just here for a checkup.
+
+You go through the eye chart, the different lenses, the machines with the rings of light, all [[the usual stuff|Dx Basic Exam]].
+
+
+::Dx Basic Exam
+
+@@.them;"No problems there, your vision is right around 20/20. I'm just going to put these drops in so I can look at the back of your eye. It'll make your vision blurry for a while so you won't be able to drive, do you have someone to <<link 'drive you home'>><<replace '#continue' t8n>><<include 'Dx Drops Reply'>><</replace>><</link>>?"@@
+
+<span id='continue'></span>
+
+
+::Dx Drops Reply
+@@.me;"I don't drive anyways, I've had them before and I took transit home, no big deal."@@
+
+You get the drops put in, and are ushered back out to the [[waiting room|Dx Drops Wait]] to wait until your pupils are dilated.
+
+
+::Dx Drops Wait
+You fiddle with your phone as you wait, checking Twitter and such. It slowly gets @@.blurry-text-1;harder to see your phone as the drops@@ @@.blurry-text-2;start to work@@. @@.blurry-text-3;Eventually you give up at trying to see your phone and just wait.@@
+
+<<timed 8s t8n>>@@.blurry-text-2;...and wait.@@<</timed>>
+
+<<timed 11s t8n>>@@.blurry-text-2;You hear your name a few minutes later, following the doctor [[back to their office|Dx Retina Exam]].@@<</timed>>
+
+
+::Dx Retina Exam
+You sit down in the exam chair, waiting while the doctor gets the machine ready.
+
+@@.them;"Put your chin here, and your forehead against here"@@ they say, gesturing to the machine. They run you through a bunch of tests, then have you look forward as they look into your eye with a light that seems way too bright.
+
+@@.me;"Okay, all done, you can [[sit back|Dx First Exam Done]]."@@
+
+::Dx First Exam Done
+@@.them;"So, I have some suspicions about what's going on with your night vision, but I want to get a couple more tests done just to make sure."@@
+
+@@.thought;huh.@@
+
+@@.them;"I'll need to refer you out for them, hopefully we can get you in soon and get that taken care of, then I'll see you back here once we're sure what's going on."@@
+
+You feel like you should have more questions, but they don't seem forthcoming at the moment and the doctor doesn't seem eager to discuss things much further before you go for more tests.
+
+You're all [[done|Dx Booking]] here for now, it seems like.
+
+::Dx Booking
+You get booked into an appointment for more tests a few days later, which seems strange. The health system @@.emphasis;never@@ works quickly here.
+
+[[A few days later...|Dx ERG Wait]]
+
+
+::Dx ERG Wait
+You arrive at the hospital clinic and check in, and are led to a room and sit down in yet another exam chair.
+
+@@.them;"You'll need to sit here for about half an hour to let your eyes adjust, don't look at your phone or anything else that makes light since we need you fully adjusted to the darkness"@@ the tech says, turning the lights off so there's just a dim red light left on.
+
+You wait, again. Yay, more waiting. A few times you go to reach for your phone out of instinct, but stop yourself before you get there.
+
+<<timed 10s t8n>>Eventually someone comes in, fiddling with [[some cables|Dx ERG]].<</timed>>
+
+::Dx ERG
+They explain what they're going to do as they put electrodes on your face and a little thread against your eye. At least they seem relatively friendly and understanding.
+
+@@.thought;I wish someone would just tell me what they're looking for or what the fuck is going on though...@@
+
+You look into a flashing light for awhile, the machine recording how your eyes react, then they turn the lights back on and do the same thing.
+
+@@.them;"All done with that part"@@ they say. You want them to tell you how you did, but they get to work disconnecting you from [[all the cables|Dx VFT]] and you don't get any more information.
+
+::Dx VFT
+They have you follow them to another room, sitting you down in front of yet another machine. You didn't even know this many different eye machines existed. You vaguely know what some of them do, but hadn't ever really had to think about it much before.
+
+They give you a stick to cover one eye with, and have you stare into a light. A button is pressed into your hand, @.them;"you need to press this whenever you see a light flash."@@
+
+Lights flash all over the bowl you're looking into, and you click the button whenever you see one. It's surprisingly stressful, some of the lights seem really dim and it's hard to tell if they're really there or if your eyes are playing tricks on you. You breathe a sigh of relief when you're finally done.
+
+@@,them;"Okay, all done here, we'll send the results to your doctor and they'll follow up, uhh, soon."@@
+
+@@.thought;I'll just assume they forgot the airquotes when they said 'soon'...@@
+
+Time to [[head home|Dx Final Wait]] and try not to think about any of this for awhile.
+
+::Dx Final Wait
+You get a call a few days later, scheduling another appointment for [[a week in the future|Dx Final]].
+
+::Dx Final
+You're sitting in the same exam chair this all started out in as the doctor comes in, flipping through what is presumably your file, and sits down.
+
+@@.thought;sitting doesn't seem good, that's always bad in movies isn't it? "I'm sorry to have to tell you this, but you have this awful disease" is what happens when doctors sit in movies.@@
+
+@@.them;"Based on all of the tests we had you do, you have something called retinitis pigmentosa, it's a genetic condition. Is there any history of vision loss in your family? It's something that's passed down."@@
+
+@@.thought;retinitis pigmentosa, so that would be something with the retina, to do with pigm... wait fuck, what? vision loss? I just tripped over a few things, it was dark out, it's not a big deal...@@
+
+@@.me;"I... don't think so? I'm not close with most of my family. My parents are fine though, everyone in my family wears glasses but..." you trail off.@@
+
+@@.them;"It explains why you've had some trouble at night, one of the first things it does is make your night vision worse."@@
+
+@@.thought;uh oh. and the second thing it does is...?@@
+
+@@.them;"The night vision issues are progressive so that's going to get worse over time, though usually quite slowly, we're talking years, not months. You might not have noticed it yet but your peripheral vision is somewhat affected as well."@@
+
+@@.me;"...affected?"@@
+
+@@.them;"It's... You have a ring where you can't see well, not right in the centre and not the very outside, but between. Your brain fills in the missing details, so at first most people don't even notice it's happening."@@
+
+@@.me;"Okay, I don't... What is this thing, what's going to happen? We're talking years, but years before what?"@@
+
+@@.them;"Your night vision will continue to get worse over time as I'd mentioned, and the scotoma, that's the spot you can't see in, will get bigger over time both to the outside and to the centre. Your brain fills in what you can't see, but there are limits to that obviously, and it's not always filling in what's actually there. Most people retain some useful central vision for the rest of their life though, it doesn't keep progressing at the same rate forever."@@
+
+@@.thought;fuck. I... fuck.@@
+
+You sit there for a minute in silence before you realize you're just staring at the wall, unable to figure out what to say or do.
+
+[[What do I do now?|Dx Next Reply]]
+[[I assume there isn't a cure or anything to stop it?|Dx Cure Reply]]
+
+::Dx Next Reply
+@@.me;"What do I do now?"@@ you ask, after some time.
+
+@@.them;"You go home, live your life like you have been. This doesn't change anything right now. Try to be careful at night, stay in better-lit areas when you can, and come back for followups. Other than that, this is something that changes your future, not your present. Do you have a driver's license?"@@
+
+@@.me;"No, I take transit, living here it never really made sense to learn."@@
+
+@@.them;"Okay, if you want to get one at any point we should talk about that first. Otherwise, that's really it for the time being. This is going to happen slowly, and you'll adapt better than you think you will right now. We'll book a followup appointment in a year, and if anything changes before then come in sooner."@@
+
+You pick up your bag and [[head home|POM Start]].
+
+::Dx Cure Reply
+@@.me;"I assume there isn't a cure or anything to stop it?"@@
+
+@@.them;"No, we know what genes cause several of the forms, but we don't have any way to stop it. There are a couple vitamins and suppliments that seem to slow it down a little bit in some studies, I'll give you a list of those, but that's about all we have at the moment. Like I said though, this will happen slowly, and because of that you'll adapt over time better than you think you will."@@
+
+@@.me;"Okay. So I just go home and... wait?"@@
+
+@@.them;"You go home and go back to your life. Try not to sit around waiting, wondering when it's going to get worse. Just live your life, and figure things out as they come. Do you have a driver's license?"@@
+
+@@.me;"No, I take transit, living here it never really made sense to learn."@@
+
+@@.them;"Okay, if you want to get one at any point we should talk about that first. Otherwise, that's really it for the time being. We'll book a followup appointment in a year, and if anything changes before then come in sooner."@@
+
+You pick up your bag and [[head home|POM Start]].

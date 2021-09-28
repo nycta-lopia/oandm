@@ -1,0 +1,112 @@
+/* Section 2 - Pre-O&M */
+
+/* TODO: do something with $skippedWork or get rid of it */
+::POM Start
+<<silently>><<set $skippedEvents to 0>>
+<<set $skippedWork to 0>>
+<<set $injuryBump to 0>>
+<<set $injuryMinor to 0>>
+<<set $injuryMajor to 0>><</silently>>
+You go home and put your stuff down, then go into the living room.
+
+You curl up on the couch and try to figure out what to do now.
+
+@@.thought;I'm not going to be blind, I guess, and they said the centre of my vision would stay the best, which is the part that I need the most... so that's good. and if they didn't even want to see me for another year, it must be pretty slow.@@
+
+[[Google it and see what information is out there|POM Search]]
+[[Watch TV and try to ignore it for now|POM Ignore]]
+
+[[POM Friends]]
+[[POM Work]]
+[[POM Errand]]
+
+[[POM Make Appointment]]
+
+::POM Search
+You grab your phone and search for 'retina pigment' since you can't exactly recall what it was called, too much information all at once.
+
+@@.thought;Why don't they ever write stuff down? They wrote down 'vitamin a' but not what I actually have.@@
+	
+Scrolling through you eventually find 'retinitis pigmentosa' which is definitely what you have. You read through the page slowly.
+
+@@.thought;One in 4000 people, hah. So lucky. 'You might trip over objects in the dark', yep. Seems like it takes years or even decades to get really bad, so... that's... okay.@@
+
+TBD MEOW - add something about legal blindness?
+
+You close the tab for now, deciding that that's probably enough reading about this for the time being.
+
+[[Jump forward|POM Forward]]
+
+::POM Ignore
+You turn the TV on and find something to watch, trying to put this out of your mind for now.
+
+You're half-successful, not really able to focus on whatever's on TV, but also not stressing too much about everything that happened today.
+
+TBD MEOW EXPAND
+
+[[Jump forward|POM Forward]]
+
+::POM Forward
+It's a couple years later.
+	
+You've had a couple followup visits, things are worse but not too bad at this point. You tend to avoid going out once the sun is really down, and you're careful when you have to go out, but mostly things are still the same for you. You've told a couple close friends and partners, but other than that nobody knows.
+
+<<include 'POM Friends'>>
+
+::POM Injury
+<<if $withFriends>><<set _passage to either('POM Injury Bump', 'POM Injury Bump', 'POM Injury Bump', 'POM Injury Bump', 'POM Injury Knee', 'POM Injury Knee', 'POM Injury Head')>><<else>><<set _passage to either('POM Injury Bump', 'POM Injury Knee')>><</if>><<include _passage>>
+
+::POM Injury Knee
+but trip over a... something, on the way there. You can't tell what it was, but you skin your knee and wreck the pants you were wearing. You quickly get back up and are otherwise mostly unharmed, but <<if $carryingGroceries>>you broke a couple jars and are <</if>>embarassed.
+<<if $withFriends>>@@.me;"Sorry, I <<excuse>>."@@<<else>>@@.thought;fuck, <<print either('how did I not see that', 'why did they put that there')>>?!@@<</if>>
+<<set $injuryMinor += 1>><<set $wreckedClothes to true>><<set $justGotInjured to true>>
+
+/* ughhhh this passage was super hard to write.
+   two concussions, the second one really awful, before I got help. fuck. */
+/* TODO: do something with $concussion or get rid of it */
+::POM Injury Head
+but trip over a construction sign support and hit your head on the sign itself on the way down.
+@@.me;"Ugh, I <<excuse>>, sorry."
+Your friends rush over and make sure you're okay, you sit up and stay there for a few minutes until you feel okay to get up again. You have a headache and are a bit nauseous but figure you'll be fine.
+
+TBD this needs expanding but ughhh not today.
+<<set $injuryMajor += 1>>
+<<set $justGotInjured to true>>
+<<set $concussion to true>>
+
+::POM Injury Bump
+<<set _thing to either('utility box', 'fire hydrant', 'tree', 'post')>>but bump into a <<print _thing>> partway there<<if $withFriends>>, your 'ow' attracting the attention of your friends as you wince.
+@@.me;"Oops, I <<excuse>>"@@ you explain, trying to brush it off as you catch back up with them.<<else>>, wincing and shaking your head, feeling embarassed but otherwise intact.<</if>>
+<<set $injuryBump += 1>>
+
+::POM Home Positive
+@@.me;that went okay<<if $withFriends>>, glad I decided to go out in the end<<else>>, whew. I hate being out when it's this dark<</if>>.@@
+
+You hang up your coat and everything else, <<if $withFriends>>and head to bed<<else>>and settle in to make supper<</if>>.
+
+<<include 'POM Time Passing'>>
+<<unset $withFriends>><<unset $carryingGroceries>>
+
+::POM Home Negative
+@@.thought;<<set _totalInjuries to $injuryMajor>><<set _totalInjuries += $injuryMinor>><<set _totalInjuries += $injuryBump>><<if _totalInjuries <= 1>>fuck. that could have gone better.<<else>><<set _phrase to either("I need to be more careful", "I should have been paying closer attention", "not again, fuck.")>>ugh, _phrase<</if>>@@
+
+You hang up your coat and everything else<<if $justGotInjured>>, patching yourself up<<unset $justGotInjured>><</if>><<if $wreckedClothes>> and changing, tossing the wrecked clothes in the trash<<unset $wreckedClothes>><</if>>. You flop down on the couch and watch TV for a bit trying to calm down, then <<if $withFriends>>head to bed<<else>>get up and make yourself some supper<</if>>.
+
+<<include 'POM Time Passing'>>
+<<unset $withFriends>><<unset $carryingGroceries>>
+
+/* TODO: tweak these thresholds maybe */
+::POM Time Passing
+<<silently>><<if $skippedEvents >= 3 or $injuryBump >= 5 or $injuryMinor >= 4 or $injuryMajor >= 2>><<set _passage to 'POM Make Appointment'>><<else>><<set _passage to either('POM Friends', 'POM Work', 'POM Errand')>><</if>><</silently>><<link 'Time passes...' _passage>><</link>>
+
+::POM Make Appointment
+You sit down a couple days later, trying to distract yourself but ending up in tears.
+@@.thought;I'm so sick of <<if $skippedEvents >= 3>>missing things I want to do just because it's dark out<<else>>getting hurt just getting around<</if>>, there has to be some better way than this.@@
+
+You pull your phone out and google 'what do I do if I'm nightblind'.
+Reading the first few links, you laugh. @@.thought;oh, turns out I might have a serious eye condition and should see an eye doctor to get an effective treatment!@@
+Nothing you find seems useful, everything just says your eyes might not be working right and to find an eye doctor.
+
+You call and leave voicemail for your eye doctor, hoping they'll be able to recommend... something. You don't really know what, but something.
+
+[[Go to your appointment|O&M Start]]

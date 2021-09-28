@@ -1,0 +1,30 @@
+// Section 2 - Pre-O&M
+// Event - Errand
+
+::POM Errand
+You're home from work and looking for supper ideas, and realize you need to go get some groceries. It's still light enough out now that you'll be fine getting to the store, but depending how busy it is and how long you spend there you might have to come back in the dark.
+
+[[Stay home|POM Errand Skip]] and figure out a meal with what you have, you can do shopping another time when it'll be lighter out.
+[[Go do the shopping now|POM Errand Leave]], no sense putting things off.
+<<set $carryingGroceries to true>>
+
+::POM Errand Leave
+You head out and walk to the grocery store, about 6 or 8 blocks away. You try to be quick with your shopping, but end up needing a number of things so it takes a bit to find everything. You check out and head out, and it's getting dark by the time you're on your way.
+
+You know the way home pretty well, and have memorized where all the steps in the sidewalk are, where the patches where it was dug up in the past are, all those sorts of things. 
+
+<<set _passage to either('POM Errand Home OK', 'POM Errand Home OK', 'POM Errand Injury')>><<include _passage>>
+
+::POM Errand Injury
+You're <<set _where to either('partway', 'halfway', 'most of the way', 'mid-way')>><<print _where>> home, <<include 'POM Injury'>>
+You shake yourself off and keep heading [[home|POM Work Home Not OK]].
+
+::POM Errand Skip
+<<set $skippedEvents += 1>>
+You decide to stay home and make a meal with whatever you can find around, which works okay but is disappointing. You know you need to take care of yourself, but it's always frustrating when you have to put things off like this.
+
+<<include 'POM Time Passing'>>
+
+::POM Errand Home OK
+You arrive back home without any trouble, and [[go inside|POM Home Positive]].
+

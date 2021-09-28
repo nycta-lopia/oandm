@@ -1,0 +1,26 @@
+.blurry-text-1 {
+  color: transparent;
+  text-shadow: 0 0 1.1px rgba(255, 255, 255);
+}
+
+.blurry-text-2 {
+  color: transparent;
+  text-shadow: 0 0 1.5px rgba(255, 255, 255);
+}
+
+.blurry-text-3 {
+  color: transparent;
+  text-shadow: 0 0 2.5px rgba(255, 255, 255);
+}
+
+.thought {
+  font-style: italic;
+}
+
+.them {
+  color: #ffff99;
+}
+
+.me {
+  color: #e6b3e6;
+}
